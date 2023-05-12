@@ -1,6 +1,7 @@
 // https://jestjs.io/blog/2017/12/18/jest-22
 // https://github.com/eugene-manuilov/jest-runner-groups/blob/master/index.js
 // https://github.com/jest-community/create-jest-runner/blob/main/lib/createJestRunner.ts
+// https://github.com/jestjs/jest/blob/main/packages/jest-runner/src/index.ts
 
 import TestRunner from 'jest-runner'
 import { Config, Test, TestRunnerContext, TestRunnerOptions, TestWatcher } from 'jest-runner'
@@ -33,6 +34,7 @@ export default class IntegrationTestRunner extends TestRunner {
 
     if (serialTests.length > 0 && parallelTest.length > 0) {
       // Reduce number of workers by one if we are both serial and parallel tests
+      // When running serial only one worker is started
       this.globalConfig.maxWorkers =
         this.globalConfig.maxWorkers > 1 ? this.globalConfig.maxWorkers - 1 : this.globalConfig.maxWorkers
     }
