@@ -19,8 +19,8 @@
     "prepublishOnly": "rm -rf build"
   },
   "files": [
-    "build/dist/**/!(*.test|test-*)!.js",
-    "build/dist/**/!(*.test|test-*)!.d.ts"
+    "build/dist/**/!(*.test|test-*).js",
+    "build/dist/**/!(*.test|test-*).d.ts"
   ],
   "repository": {
     "type": "git",

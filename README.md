@@ -1,8 +1,27 @@
-# node-jest-runner-integration
+# Jest Runner Integration
 
-Jest runner that runs integration test in band and units test in parallel
+Jest runner that runs integration test in band and units test in parallel and run both in parallel.
 
-## VSCode
+Test files are treated as integration tests if they end in it.test.ts or it.test.js.
+
+This can speed up test runs if you are forced to run all your test in band because some of them share a resource(fx. a database) and can not run at the same time.
+
+## Using
+
+``` bash
+npm install @connectedcars/jest-runner-integration
+```
+
+jest.config.js:
+```javascript
+module.exports = {
+  ...
+  runner: '@connectedcars/jest-runner-integration',
+  ...
+}
+```
+
+## VSCode setup for debugging
 
 launch.json:
 ``` json5
