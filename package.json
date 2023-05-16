@@ -1,6 +1,6 @@
 {
   "name": "@connectedcars/jest-runner-integration",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Jest runner that runs integration test in band and units test in parallel",
   "main": "build/dist/src/index.js",
   "scripts": {
